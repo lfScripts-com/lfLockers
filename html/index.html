@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Casiers</title>
+</head>
+<body>
+    <div id="locker-container">
+        <div class="locker-header">
+            <h1 id="locker-title">Casiers</h1>
+            <div class="close-btn" id="close-btn"><i class="fas fa-times"></i></div>
+        </div>
+        
+        <div class="locker-content">
+            <div class="locker-options">
+                <div class="option-btn active" id="personal-locker-btn">
+                    <i class="fas fa-box"></i> <span>Mon Casier</span>
+                </div>
+                <div class="option-btn" id="officers-locker-btn" style="display: none;">
+                    <i class="fas fa-users"></i> <span>Casiers des Employés</span>
+                </div>
+            </div>
+            
+            <div class="locker-list" id="officers-list" style="display: none;">
+                <h2><i class="fas fa-list"></i> Liste des Employés</h2>
+                <div class="officers-container" id="officers-container">
+                    <!-- Les employés seront ajoutés ici dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="nui://game/ui/jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
