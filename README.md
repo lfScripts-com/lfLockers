@@ -22,7 +22,7 @@ A free interactive locker system for ESX servers.
 ## Installation
 
 1. Put script in your resources directory
-2. Add `ensure lfCasiers` in your server.cfg
+2. Add `ensure lfLockers` in your server.cfg
 3. Configure locker positions in `config.lua`
 
 ## Configuration
