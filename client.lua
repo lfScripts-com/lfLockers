@@ -71,12 +71,12 @@ local function OpenLockerUI(locker)
 end
 
 local function OpenPersonalLocker(locker)
-    TriggerServerEvent('lfCasiers:openPersonalLocker', locker.id)
+    TriggerServerEvent('lfLockers:openPersonalLocker', locker.id)
     CloseLockerUI()
 end
 
 local function OpenAdminUI(locker)
-    TriggerServerEvent('lfCasiers:getJobOfficers', locker.id)
+    TriggerServerEvent('lfLockers:getJobOfficers', locker.id)
 end
 
 function CloseLockerUI()
@@ -107,7 +107,7 @@ end)
 
 RegisterNUICallback('openOfficerLocker', function(data, cb)
     if currentLocker then
-        TriggerServerEvent('lfCasiers:openOfficerLocker', currentLocker.id, data.officerId)
+        TriggerServerEvent('lfLockers:openOfficerLocker', currentLocker.id, data.officerId)
     end
     CloseLockerUI()
     cb('ok')
@@ -125,8 +125,8 @@ RegisterNUICallback('showNotification', function(data, cb)
     cb('ok')
 end)
 
-RegisterNetEvent('lfCasiers:receiveJobOfficers')
-AddEventHandler('lfCasiers:receiveJobOfficers', function(officers)
+RegisterNetEvent('lfLockers:receiveJobOfficers')
+AddEventHandler('lfLockers:receiveJobOfficers', function(officers)
     SendNUIMessage({
         action = 'setOfficers',
         officers = officers

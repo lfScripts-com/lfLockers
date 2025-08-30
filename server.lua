@@ -32,8 +32,8 @@ local function GenerateLockerID(xPlayer, lockerId)
     return lockerId .. '_' .. xPlayer.identifier:gsub(':', '_')
 end
 
-RegisterServerEvent('lfCasiers:openPersonalLocker')
-AddEventHandler('lfCasiers:openPersonalLocker', function(lockerId)
+RegisterServerEvent('lfLockers:openPersonalLocker')
+AddEventHandler('lfLockers:openPersonalLocker', function(lockerId)
     local source = source
     local xPlayer = ESX.GetPlayerFromId(source)
     
@@ -57,8 +57,8 @@ AddEventHandler('lfCasiers:openPersonalLocker', function(lockerId)
     TriggerClientEvent('ox_inventory:openInventory', source, 'stash', personalLockerId)
 end)
 
-RegisterServerEvent('lfCasiers:openOfficerLocker')
-AddEventHandler('lfCasiers:openOfficerLocker', function(lockerId, targetId)
+RegisterServerEvent('lfLockers:openOfficerLocker')
+AddEventHandler('lfLockers:openOfficerLocker', function(lockerId, targetId)
     local source = source
     local xPlayer = ESX.GetPlayerFromId(source)
     
@@ -117,8 +117,8 @@ AddEventHandler('lfCasiers:openOfficerLocker', function(lockerId, targetId)
     end
 end)
 
-RegisterServerEvent('lfCasiers:getJobOfficers')
-AddEventHandler('lfCasiers:getJobOfficers', function(lockerId)
+RegisterServerEvent('lfLockers:getJobOfficers')
+AddEventHandler('lfLockers:getJobOfficers', function(lockerId)
     local source = source
     local xPlayer = ESX.GetPlayerFromId(source)
     
@@ -190,5 +190,5 @@ AddEventHandler('lfCasiers:getJobOfficers', function(lockerId)
         end
     end
     
-    TriggerClientEvent('lfCasiers:receiveJobOfficers', source, officers)
+    TriggerClientEvent('lfLockers:receiveJobOfficers', source, officers)
 end) 
