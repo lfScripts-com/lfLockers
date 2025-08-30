@@ -47,7 +47,7 @@ $(function() {
         $(this).addClass('active');
         $('#officers-list').hide();
         
-        $.post('https://lfCasiers/openPersonalLocker', JSON.stringify({}));
+        $.post('https://lfLockers/openPersonalLocker', JSON.stringify({}));
     });
     
     $(document).on('click', '#officers-locker-btn', function(e) {
@@ -60,7 +60,7 @@ $(function() {
         $(this).addClass('active');
         $('#officers-list').show();
         
-        $.post('https://lfCasiers/getJobOfficers', JSON.stringify({}));
+        $.post('https://lfLockers/getJobOfficers', JSON.stringify({}));
     });
     
     function displayOfficers(officers) {
@@ -106,7 +106,7 @@ $(function() {
             const officerElement = $(this).closest('.officer-item');
             const officerId = officerElement.data('id');
             
-            $.post('https://lfCasiers/showNotification', JSON.stringify({
+            $.post('https://lfLockers/showNotification', JSON.stringify({
                 message: 'Vous consultez un casier'
             }));
             
@@ -115,13 +115,13 @@ $(function() {
     }
     
     function openOfficerLocker(officerId) {
-        $.post('https://lfCasiers/openOfficerLocker', JSON.stringify({
+        $.post('https://lfLockers/openOfficerLocker', JSON.stringify({
             officerId: officerId
         }));
     }
     
     function closeUI() {
-        $.post('https://lfCasiers/closeUI', JSON.stringify({}));
+        $.post('https://lfLockers/closeUI', JSON.stringify({}));
         resetUI();
     }
     
