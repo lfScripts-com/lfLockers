@@ -7,7 +7,7 @@ escrow_ignore {
     'server.lua',
     'config.lua',
     'lang.lua',
-  }
+}
 
 shared_scripts {
     '@es_extended/imports.lua',
