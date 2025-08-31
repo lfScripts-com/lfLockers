@@ -2,6 +2,12 @@ fx_version 'cerulean'
 game 'gta5'
 author 'LFScripts, xLaugh, Firgyy'
 lua54 'yes'
+escrow_ignore {
+    'client.lua',
+    'server.lua',
+    'config.lua',
+    'lang.lua',
+  }
 
 shared_scripts {
     '@es_extended/imports.lua',
