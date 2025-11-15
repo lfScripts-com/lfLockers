@@ -1,4 +1,9 @@
-local ESX = exports["es_extended"]:getSharedObject()
+if Config and Config.ESXMode == 'old' then
+    ESX = ESX or nil
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+else
+    ESX = exports["es_extended"]:getSharedObject()
+end
 
 AddEventHandler('onResourceStart', function(resourceName)
     if resourceName ~= GetCurrentResourceName() then return end

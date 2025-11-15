@@ -3,6 +3,9 @@ Config = {}
 -- Configuration de la langue (fr/en)
 Config.Language = 'fr'
 
+-- Configuration ESX
+Config.ESXMode = 'new' -- 'old' ou 'new' (compatibilité ESX)
+
 -- Configuration des casiers multiples
 Config.Lockers = {
     {
